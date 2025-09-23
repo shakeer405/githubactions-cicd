@@ -24,6 +24,11 @@ jobs:
       shell: pwsh
       run: |
         cd ui
-       // <!-- find . -iname "*.js" -exec node --check {} + -->
-       Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
+        Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
+    # - name: front end validation
+    #   shell: bash
+    #   run: |
+    #     cd ui
+    #    // <!-- find . -iname "*.js" -exec node --check {} + -->
+    #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
 
