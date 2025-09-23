@@ -31,4 +31,9 @@ jobs:
     #     cd ui
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
+    - name: gitleaks setup
+      uses: gitleaks/gitleaks-actions@v2
+    - name: git leaks stage
+      run: |
+        gitleaks detect --source ./ui --exit-code 1
 
