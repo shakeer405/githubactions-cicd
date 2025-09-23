@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '23'
-    - name: front end validation
+    - name: front end validation $GITHUB_RUN_NUMBER
       shell: powershell
       run: |
         cd ui
@@ -31,7 +31,7 @@ jobs:
     #     cd ui
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
-    - name: gitleaks setup
+    - name: gitleaks setup $GITHUB_RUN_NUMBER
       uses: zricethezav/gitleaks-action@v2.3.9
     - name: git leaks stage
       run: |
