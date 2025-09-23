@@ -32,7 +32,7 @@ jobs:
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
     - name: gitleaks setup $GITHUB_RUN_NUMBER
-      uses: gitleaks/gitleaks-action@v2.3.
+      uses: gitleaks/gitleaks-action@v2.3.9
     - name: git leaks stage
       run: |
         gitleaks detect --source ./ui --exit-code 1
