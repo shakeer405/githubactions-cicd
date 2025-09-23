@@ -37,7 +37,7 @@ jobs:
           tar -xf gitleaks_8.24.3_windows_x64.zip || powershell -Command "Expand-Archive gitleaks_8.24.3_windows_x64.zip -DestinationPath ."
           echo "$PWD" >> $GITHUB_PATH
     
-    - name: git leaks stage
+    - name: git leaks stage  
       run: |
         gitleaks detect --source ./ui --exit-code 1
 
