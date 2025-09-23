@@ -21,7 +21,9 @@ jobs:
       with:
         node-version: '23'
     - name: front end validation
-      shell: bash
+      shell: pwsh
       run: |
         cd ui
-        find . -iname "*.js" -exec node --check {} +
+       # find . -iname "*.js" -exec node --check {} +
+       Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
+
