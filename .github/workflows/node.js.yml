@@ -32,7 +32,10 @@ jobs:
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
     - name: gitleaks setup $GITHUB_RUN_NUMBER
-      uses: gitleaks/gitleaks-action@v2.3.9
+      run: |
+        curl -LO https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_windows_x64.zip
+          tar -xf gitleaks_8.24.3_windows_x64.zip || powershell -Command "Expand-Archive gitleaks_8.24.3_windows_x64.zip -DestinationPath ."
+          echo "$PWD" >> $GITHUB_PATH
     
     - name: git leaks stage
       run: |
