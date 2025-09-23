@@ -34,8 +34,8 @@ jobs:
     - name: gitleaks setup $GITHUB_RUN_NUMBER
       run: |
         curl -LO https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_windows_x64.zip
-    powershell -Command "Expand-Archive -Path gitleaks_8.24.3_windows_x64.zip -DestinationPath . -Force"
-    echo %CD%>> %GITHUB_PATH%
+        powershell -Command "Expand-Archive -Path gitleaks_8.24.3_windows_x64.zip -DestinationPath . -Force"
+        echo %CD%>> %GITHUB_PATH%
     
     - name: git leaks stage  
       run: |
