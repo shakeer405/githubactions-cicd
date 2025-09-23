@@ -24,6 +24,6 @@ jobs:
       shell: pwsh
       run: |
         cd ui
-       # find . -iname "*.js" -exec node --check {} +
+       // <!-- find . -iname "*.js" -exec node --check {} + -->
        Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
 
