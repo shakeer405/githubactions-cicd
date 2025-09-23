@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Sample Node.js frontend app",
   "main": "server.js",
+  "password": "changeit",
   "scripts": {
     "start": "node server.js"
   },
