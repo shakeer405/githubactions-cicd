@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: '23'
     - name: front end validation
-      shell: pwsh
+      shell: powershell
       run: |
         cd ui
         Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
