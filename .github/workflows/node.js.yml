@@ -31,14 +31,19 @@ jobs:
     #     cd ui
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
-    - name: gitleaks setup $GITHUB_RUN_NUMBER
-      shell: cmd
-      run: |
-        curl -LO https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_windows_x64.zip
-        powershell -Command "Expand-Archive -Path gitleaks_8.24.3_windows_x64.zip -DestinationPath . -Force"
-        echo %CD%>> %GITHUB_PATH%
+    gitleaksscan:
+      runs-on: self-hosted
+      steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: gitleaks setup $GITHUB_RUN_NUMBER
+        shell: cmd
+         run: |
+         curl -LO https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_windows_x64.zip
+         powershell -Command "Expand-Archive -Path gitleaks_8.24.3_windows_x64.zip -DestinationPath . -Force"
+         echo %CD%>> %GITHUB_PATH%
     
-    - name: git leaks stage  
-      run: |
-        gitleaks detect --source ./ui --exit-code 1
+      - name: git leaks stage  
+        run: |
+         gitleaks detect --source ./ui --exit-code 1
 
