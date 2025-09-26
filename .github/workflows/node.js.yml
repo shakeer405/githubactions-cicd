@@ -31,7 +31,7 @@ jobs:
     #     cd ui
     #    // <!-- find . -iname "*.js" -exec node --check {} + -->
     #    Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
-    gitleaksscan:
+  gitleaksscan:
       runs-on: self-hosted
       steps:
       - name: checkout code
