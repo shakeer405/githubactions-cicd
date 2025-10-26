@@ -28,9 +28,10 @@ jobs:
     - name: Dockerize application using Git Bash
       shell: cmd
       run: |
-        echo "Starting Docker build using Git Bash..."
+        @echo off
+        echo Starting Docker build using CMD...
         docker build -t frontend-app:latest -f ui/Dockerfile ui
-        echo "Docker image built and container started successfully."
+        echo Docker image built successfully!
     # - name: front end validation
     #   shell: bash
     #   run: |
