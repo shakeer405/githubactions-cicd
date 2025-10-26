@@ -11,7 +11,7 @@ COPY ui/package*.json ./
 RUN npm ci
 
 # Copy the rest of the application code
-COPY ui/ .
+COPY ui .
 
 # Build the frontend (if applicable)
 # Uncomment this if package.json has a build command
