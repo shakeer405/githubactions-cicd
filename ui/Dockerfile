@@ -5,7 +5,7 @@ FROM node:23-alpine AS builder
 WORKDIR /app
 
 # Copy package files first for dependency caching
-COPY ui/package*.json ./
+#COPY ui/package*.json ./
 
 # Install app dependencies
 RUN npm ci
