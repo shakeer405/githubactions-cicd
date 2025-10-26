@@ -26,7 +26,7 @@ jobs:
         cd ui
         Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
     - name: Dockerize application using Git Bash
-      shell: bash
+      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
       run: |
         echo "Starting Docker build using Git Bash..."
         cd ui
