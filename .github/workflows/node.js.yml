@@ -30,12 +30,7 @@ jobs:
       run: |
         echo "Starting Docker build using Git Bash..."
         cd ui
-        # Build Docker image
         docker build -t frontend-app:latest -f ui/Dockerfile .
-        
-        # Optionally run the container for testing
-        #docker run --rm -d -p 8080:80 --name myfrontend my-frontend-app:latest
-        
         echo "Docker image built and container started successfully."
     # - name: front end validation
     #   shell: bash
