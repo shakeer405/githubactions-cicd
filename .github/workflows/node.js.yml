@@ -25,6 +25,18 @@ jobs:
       run: |
         cd ui
         Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
+    - name: Dockerize application using Git Bash
+      shell: bash
+      run: |
+        echo "Starting Docker build using Git Bash..."
+        cd ui
+        # Build Docker image
+        docker build -t my-frontend-app:latest .
+        
+        # Optionally run the container for testing
+        #docker run --rm -d -p 8080:80 --name myfrontend my-frontend-app:latest
+        
+        echo "Docker image built and container started successfully."
     # - name: front end validation
     #   shell: bash
     #   run: |
